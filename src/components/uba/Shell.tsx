@@ -1,4 +1,4 @@
-import { useState, type ComponentType } from "react";
+import { useState, type ComponentType, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   Activity,
@@ -31,7 +31,7 @@ export type ModuleId =
 
 const moduleRegistry: Record<
   ModuleId,
-  { label: string; icon: ComponentType<{ className?: string }>; render: () => JSX.Element }
+  { label: string; icon: ComponentType<{ className?: string }>; render: () => ReactNode }
 > = {
   overview: { label: "Overview", icon: LayoutGrid, render: () => <Overview /> },
   work: { label: "Work Orders", icon: ClipboardList, render: () => <WorkOrders /> },
